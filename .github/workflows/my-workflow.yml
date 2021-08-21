@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Comment on new issues
-        uses: actions/github-script@v4.0.2
+        uses: actions/github-script@v4.1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
@@ -28,7 +28,7 @@ jobs:
 
       - name: Add bugs to project board
         if: contains(github.event.issue.labels.*.name, 'bug')
-        uses: actions/github-script@v4.0.2
+        uses: actions/github-script@v4.1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
