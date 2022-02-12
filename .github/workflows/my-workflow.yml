@@ -19,7 +19,7 @@ jobs:
             const fs = require('fs')
             const issueBody = fs.readFileSync(".github/ISSUE_RESPONSES/comment.md", "utf8")
 
-            github.issues.createComment({
+            github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -32,7 +32,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            github.projects.createCard({
+            github.rest.projects.createCard({
               column_id: 11401190,
               content_id: context.payload.issue.id,
               content_type: "Issue"
