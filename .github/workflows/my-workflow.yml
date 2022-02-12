@@ -2,7 +2,9 @@ name: Learning GitHub Script
 
 on:
   issues:
-    types: [opened]
+    types:
+      - opened
+      - reopened
 
 jobs:
   comment:
